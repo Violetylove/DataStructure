@@ -74,6 +74,18 @@ public class SinglyList<T> {
         return target.data;
     }
 
+    public Node<T> search(T key){
+        if (isEmpty())
+            return null;
+        Node<T> target = head.next;
+        while (target != null){
+            if (target.data == key)
+                return target;
+            target = target.next;
+        }
+        return null;
+    }
+
     /**
      * 删除index位置的结点
      * @param index 索引位置。对index容错，真不容易啊
