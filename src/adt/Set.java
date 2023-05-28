@@ -5,7 +5,7 @@ package adt;
  * @version 1.0
  */
 public interface Set<T> {
-    public T search();
-    public boolean add(T x);
-    public T remove(T x);
+    public T search(T value);
+    public boolean add(T value);
+    public T remove(T value);
 }

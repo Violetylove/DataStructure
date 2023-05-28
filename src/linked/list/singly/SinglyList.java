@@ -65,7 +65,7 @@ public class SinglyList<T> {
         return target.data;
     }
 
-    public T search(int index){
+    public T searchByIndex(int index){
         if (isEmpty())
             return null;
         Node<T> target = head.next;
@@ -74,16 +74,16 @@ public class SinglyList<T> {
         return target.data;
     }
 
-    public Node<T> search(T key){
+    public Node<T> searchByValue(T key){
         if (isEmpty())
             return null;
         Node<T> target = head.next;
         while (target != null){
             if (target.data == key)
-                return target;
+                break;
             target = target.next;
         }
-        return null;
+        return target;
     }
 
     /**
@@ -91,9 +91,9 @@ public class SinglyList<T> {
      * @param index 索引位置。对index容错，真不容易啊
      * @return 删除的结点
      */
-    public T remove(int index) {
+    public T removeByIndex(int index) {
         if (isEmpty()) return null;
-        Node<T> front = head;
+        Node<T> front = head; // 指向待删结点的前一个结点
         Node<T> temp = head; // 指向尾结点的前一个结点
         // 找结点
         for (int i = 0; front.next != null && i < index; i++) {
@@ -101,17 +101,34 @@ public class SinglyList<T> {
             if (front.next != null)
                 temp = front;
         }
-        T x;
+        T target;
         // 头删除和中间删除
         if (front.next != null){
-            x = front.next.data;
+            target = front.next.data;
             front.next = front.next.next;
         // 尾删除
         }else {
-            x = temp.next.data;
+            target = temp.next.data;
             temp.next = null;
         }
-        return x;
+        return target;
+    }
+
+    public T removeByValue(T value){
+        if (isEmpty())
+            return null;
+        Node<T> front = head; // 指向待删结点的前一个结点
+        // 找结点
+        while (front.next != null) {
+            if (front.next.data == value) {
+                T target = front.next.data;
+                front.next = front.next.next;
+                return target;
+            }
+            else
+                front = front.next;
+        }
+        return null;
     }
 
     public void clear(){

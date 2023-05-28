@@ -29,7 +29,7 @@ public final class LinkedStack<T> implements Stack<T> {
 
     @Override
     public T pop() {
-        return list.remove(0);
+        return list.removeByIndex(0);
     }
 
     @Override
