@@ -25,7 +25,8 @@ public class SearchAlgorithm {
 
     /**
      * 二分查找接口样式方法
-     * @param array 排序数组
+     *
+     * @param array 排序过的数组
      * @param value 待查找的值
      * @return 元素下标；-1表示没有找到。
      */
@@ -35,7 +36,7 @@ public class SearchAlgorithm {
 
     /**
      * 二分查找实现
-     * @param array 待排序数组
+     * @param array 排序过的数组
      * @param begin 子序列首下标
      * @param end 子序列尾下标
      * @param value 待查找值
@@ -57,7 +58,7 @@ public class SearchAlgorithm {
 
     /**
      * 插值查找实现
-     * @param array 待排序数组
+     * @param array 排序过的数组
      * @param value 待查找值
      * @return 元素下标；-1表示没有找到。
      */
@@ -77,7 +78,7 @@ public class SearchAlgorithm {
      * int mid = begin + (end - begin) * (value - array[begin]) / (array[end] - value)
      * </pre></blockquote>
      * </p>
-     * @param array 待排序数组
+     * @param array 排序过的数组
      * @param begin 子序列首下标
      * @param end 子序列尾下标
      * @param value 待查找值

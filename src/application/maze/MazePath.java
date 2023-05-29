@@ -25,12 +25,14 @@ public class MazePath {
     自己选择吧
      */
     private final int[][] mark;
+
+    // 两个公共数组，所有对象共用。
     // 方向数组
     private static final List<String> dirs = new ArrayList<>();
     // 表示下一个点位的数组
-    private static final Map<String,int[]> move = new HashMap<>();
+    private static final Map<String, int[]> move = new HashMap<>();
 
-    // 赋值公共数组
+    // 公共数组赋值
     static {
         dirs.add("E");// 0 东
         dirs.add("S");// 1 南
